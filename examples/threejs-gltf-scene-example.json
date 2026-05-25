@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "version": 4.6,
+    "type": "Object",
+    "generator": "Object3D.toJSON"
+  },
+  "geometries": [
+    {
+      "uuid": "5f6d2e6b-2c11-4e84-9d1d-7a4c1d0b9a01",
+      "type": "BoxGeometry",
+      "width": 1,
+      "height": 1,
+      "depth": 1,
+      "widthSegments": 1,
+      "heightSegments": 1,
+      "depthSegments": 1
+    }
+  ],
+  "materials": [
+    {
+      "uuid": "9c5fe6c8-1ad4-44d4-9d92-3f5c8f00f3a0",
+      "type": "MeshStandardMaterial",
+      "color": 16737095,
+      "roughness": 0.4,
+      "metalness": 0.1,
+      "emissive": 0,
+      "side": 0,
+      "transparent": false,
+      "opacity": 1.0,
+      "depthFunc": 3,
+      "depthTest": true,
+      "depthWrite": true
+    }
+  ],
+  "textures": [],
+  "images": [],
+  "object": {
+    "uuid": "0fa37e8e-3a4e-4f3a-9b6a-7e8f5c7b0a10",
+    "type": "Scene",
+    "name": "DemoScene",
+    "layers": 1,
+    "matrix": [1, 0, 0, 0,  0, 1, 0, 0,  0, 0, 1, 0,  0, 0, 0, 1],
+    "up": [0, 1, 0],
+    "background": 1118481,
+    "children": [
+      {
+        "uuid": "11111111-1111-1111-1111-111111111111",
+        "type": "PerspectiveCamera",
+        "name": "MainCamera",
+        "fov": 50,
+        "aspect": 1.7777,
+        "near": 0.1,
+        "far": 1000,
+        "matrix": [1, 0, 0, 0,  0, 1, 0, 0,  0, 0, 1, 0,  0, 1.5, 5, 1]
+      },
+      {
+        "uuid": "22222222-2222-2222-2222-222222222222",
+        "type": "DirectionalLight",
+        "name": "KeyLight",
+        "color": 16777215,
+        "intensity": 1.0,
+        "matrix": [1, 0, 0, 0,  0, 1, 0, 0,  0, 0, 1, 0,  5, 10, 7.5, 1]
+      },
+      {
+        "uuid": "33333333-3333-3333-3333-333333333333",
+        "type": "Mesh",
+        "name": "Cube",
+        "geometry": "5f6d2e6b-2c11-4e84-9d1d-7a4c1d0b9a01",
+        "material": "9c5fe6c8-1ad4-44d4-9d92-3f5c8f00f3a0",
+        "matrix": [1, 0, 0, 0,  0, 1, 0, 0,  0, 0, 1, 0,  0, 0, 0, 1],
+        "castShadow": true,
+        "receiveShadow": true,
+        "visible": true
+      }
+    ]
+  }
+}

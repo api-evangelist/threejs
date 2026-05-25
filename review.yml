@@ -1,0 +1,47 @@
+aid: threejs
+name: Three.js
+type: opensource
+tier: 1
+reviewed: '2026-05-25'
+reviewer: Kin Lane
+summary: >-
+  Three.js is the de-facto JavaScript 3D library — broad and deep API surface, an active 16-year track record,
+  monthly releases, and a vibrant ecosystem of higher-level frameworks built on top (React Three Fiber, A-Frame,
+  Threlte, TroisJS, model-viewer). The project ships an MIT-licensed npm package, full ES module distribution,
+  TypeScript types via DefinitelyTyped, a documented JSON object format for scene serialization, a browser-based
+  editor, and a robust addon system covering loaders, controls, helpers, and post-processing for both WebGL and
+  WebGPU. Suitable as a Tier-1 reference for client-side 3D, creative coding, visualization, and WebXR.
+strengths:
+- Massive, well-organized public API documented at threejs.org/docs with hundreds of classes
+- Two production renderers (WebGL + WebGPU) sharing a unified Three.js Shading Language (TSL)
+- Documented JSON Object format (Object3D.toJSON / ObjectLoader.parse) — a real machine-readable contract
+- Comprehensive loader coverage for industry asset formats (glTF, USDZ, FBX, OBJ, KTX2, DRACO)
+- Healthy ecosystem — React Three Fiber, A-Frame, model-viewer, Threlte, TroisJS, drei all depend on it
+- MIT license, no required runtime dependencies, monthly release cadence
+- Browser-based Editor (threejs.org/editor) as an accessible authoring surface
+gaps:
+- No central governance org — bus-factor sits heavily on mrdoob and a small group of core contributors
+- TypeScript types live in a separate community repo and lag the main release by short windows
+- No hosted commercial offering, so no Plans / Rate Limits / FinOps artifacts apply
+- No REST or AsyncAPI surface — profile relies on JSON Schema + JSON-LD + vocabulary rather than OpenAPI
+artifacts:
+  apis: 6
+  openapi: 0
+  asyncapi: 0
+  json_schema: 3
+  json_ld: 1
+  vocabulary: 1
+  examples: 1
+  capabilities: 0
+  rules: 0
+  plans: 0
+  rate_limits: 0
+  finops: 0
+sources:
+- https://threejs.org/
+- https://threejs.org/docs/
+- https://threejs.org/manual/
+- https://github.com/mrdoob/three.js
+- https://github.com/mrdoob/three.js/blob/dev/README.md
+- https://registry.npmjs.org/three/latest
+- https://github.com/three-types/three-ts-types

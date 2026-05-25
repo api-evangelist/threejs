@@ -1,0 +1,99 @@
+aid: threejs
+name: Three.js Vocabulary
+description: >-
+  Canonical vocabulary for the Three.js JavaScript 3D library — scene graph concepts, rendering pipeline,
+  asset formats, and ecosystem terminology. Intended for cross-referencing Three.js artifacts with the broader
+  3D-graphics and Web-XR ecosystem.
+modified: '2026-05-25'
+source: https://threejs.org/docs/
+terms:
+- term: Scene
+  definition: Root container for all renderable objects, lights, fog, and an optional environment / background.
+  reference: https://threejs.org/docs/#api/en/scenes/Scene
+- term: Object3D
+  definition: Base class for every node in the Three.js scene graph; provides position, rotation, scale, parenting, and matrix maintenance.
+  reference: https://threejs.org/docs/#api/en/core/Object3D
+- term: Group
+  definition: Logical container Object3D with no rendering surface of its own; used to apply transforms to multiple children.
+  reference: https://threejs.org/docs/#api/en/objects/Group
+- term: Mesh
+  definition: Drawable Object3D pairing a BufferGeometry with one or more Materials.
+  reference: https://threejs.org/docs/#api/en/objects/Mesh
+- term: InstancedMesh
+  definition: A single Mesh drawn with many per-instance transforms in one draw call — a foundational GPU-instancing primitive.
+  reference: https://threejs.org/docs/#api/en/objects/InstancedMesh
+- term: BatchedMesh
+  definition: Static-geometry batching primitive that combines many distinct geometries into a single draw call with per-mesh visibility and color.
+  reference: https://threejs.org/docs/#api/en/objects/BatchedMesh
+- term: SkinnedMesh
+  definition: A Mesh that deforms with a Skeleton via vertex bone weights; used for character animation.
+  reference: https://threejs.org/docs/#api/en/objects/SkinnedMesh
+- term: PerspectiveCamera
+  definition: Camera using a perspective projection, parameterized by FOV, aspect ratio, near, and far planes.
+  reference: https://threejs.org/docs/#api/en/cameras/PerspectiveCamera
+- term: OrthographicCamera
+  definition: Camera with an orthographic projection; preserves size regardless of distance.
+  reference: https://threejs.org/docs/#api/en/cameras/OrthographicCamera
+- term: WebGLRenderer
+  definition: The production renderer that draws the scene graph using WebGL 2; included in the main bundle.
+  reference: https://threejs.org/docs/#api/en/renderers/WebGLRenderer
+- term: WebGPURenderer
+  definition: The next-generation renderer that targets the WebGPU API, exported from `three/webgpu`.
+  reference: https://threejs.org/docs/#api/en/renderers/WebGPURenderer
+- term: TSL
+  definition: Three.js Shading Language — a node-based shader graph that compiles to GLSL (WebGL) or WGSL (WebGPU), enabling write-once shaders across both backends.
+  reference: https://threejs.org/docs/#api/en/nodes/Nodes
+- term: BufferGeometry
+  definition: Geometry container holding per-vertex attributes (position, normal, uv, color, ...) and an optional index buffer.
+  reference: https://threejs.org/docs/#api/en/core/BufferGeometry
+- term: MeshStandardMaterial
+  definition: Physically-based material using the metalness-roughness workflow; foundation for most modern PBR scenes.
+  reference: https://threejs.org/docs/#api/en/materials/MeshStandardMaterial
+- term: MeshPhysicalMaterial
+  definition: Extension of MeshStandardMaterial adding clearcoat, sheen, iridescence, transmission, anisotropy, and specular workflows.
+  reference: https://threejs.org/docs/#api/en/materials/MeshPhysicalMaterial
+- term: ShaderMaterial
+  definition: Custom material authored with raw GLSL vertex and fragment shaders.
+  reference: https://threejs.org/docs/#api/en/materials/ShaderMaterial
+- term: Texture
+  definition: 2D image data uploaded to the GPU and sampled by materials; supports wrapping, filtering, mipmaps, and color-space metadata.
+  reference: https://threejs.org/docs/#api/en/textures/Texture
+- term: CubeTexture
+  definition: Six-face cubemap texture used for environment maps, skyboxes, and reflections.
+  reference: https://threejs.org/docs/#api/en/textures/CubeTexture
+- term: GLTFLoader
+  definition: Addon loader for the Khronos glTF 2.0 binary or JSON format — the recommended scene interchange format for Three.js.
+  reference: https://threejs.org/docs/#examples/en/loaders/GLTFLoader
+- term: DRACOLoader
+  definition: Companion loader that decodes Draco-compressed mesh streams referenced from glTF files via KHR_draco_mesh_compression.
+  reference: https://threejs.org/docs/#examples/en/loaders/DRACOLoader
+- term: KTX2Loader
+  definition: Loader for KTX2 / Basis Universal supercompressed textures via the KHR_texture_basisu extension.
+  reference: https://threejs.org/docs/#examples/en/loaders/KTX2Loader
+- term: OrbitControls
+  definition: Camera control addon that orbits, pans, and zooms a camera around a target point — the most commonly used Three.js controls.
+  reference: https://threejs.org/docs/#examples/en/controls/OrbitControls
+- term: EffectComposer
+  definition: Post-processing pipeline that chains screen-space passes (Bloom, SSAO, SMAA, etc.) into a final composited frame.
+  reference: https://threejs.org/docs/#manual/en/introduction/How-to-use-post-processing
+- term: AnimationMixer
+  definition: Per-Object3D playback controller that blends one or more AnimationClips driven by KeyframeTracks.
+  reference: https://threejs.org/docs/#api/en/animation/AnimationMixer
+- term: WebXR
+  definition: Browser API for VR and AR sessions; Three.js exposes WebXR via `renderer.xr` for headset rendering and XR input.
+  reference: https://threejs.org/docs/#manual/en/introduction/How-to-create-VR-content
+- term: Three.js JSON Object Format
+  definition: The native serialization format emitted by `Object3D.toJSON()` and consumed by `ObjectLoader.parse()`; produced by the Three.js Editor and used for portable scene exchange.
+  reference: https://github.com/mrdoob/three.js/wiki/JSON-Object-Scene-format-4
+- term: Addons
+  definition: Optional modules shipped alongside the core library under `three/addons/*` (formerly `examples/jsm/`) — loaders, controls, helpers, post-processing, exporters, math utilities.
+  reference: https://github.com/mrdoob/three.js/tree/dev/examples/jsm
+- term: React Three Fiber
+  definition: A React renderer for Three.js that maps the scene graph to React components; the most widely used higher-level wrapper.
+  reference: https://github.com/pmndrs/react-three-fiber
+- term: A-Frame
+  definition: A declarative HTML framework for VR / AR experiences built on top of Three.js.
+  reference: https://github.com/aframevr/aframe
+- term: model-viewer
+  definition: A Google-maintained web component that uses Three.js to render glTF / GLB models with AR Quick Look and Scene Viewer fallbacks.
+  reference: https://github.com/google/model-viewer

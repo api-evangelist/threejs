@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/threejs/refs/heads/main/json-schema/threejs-vector3-schema.json",
+  "title": "THREE.Vector3",
+  "description": "A three-dimensional vector. Used pervasively in three.js for positions, normals, scales, and Euler offsets. Serializes either as a 3-element array [x, y, z] or as an object with x, y, z properties depending on context.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "x": {
+      "type": "number",
+      "description": "The x component of the vector. Default is 0."
+    },
+    "y": {
+      "type": "number",
+      "description": "The y component of the vector. Default is 0."
+    },
+    "z": {
+      "type": "number",
+      "description": "The z component of the vector. Default is 0."
+    }
+  },
+  "required": ["x", "y", "z"],
+  "examples": [
+    { "x": 0, "y": 0, "z": 0 },
+    { "x": 1.5, "y": -2.0, "z": 3.25 }
+  ]
+}

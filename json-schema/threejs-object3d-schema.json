@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/threejs/refs/heads/main/json-schema/threejs-object3d-schema.json",
+  "title": "THREE.Object3D",
+  "description": "A serialized three.js Object3D node as produced by Object3D.toJSON(). Object3D is the base class for nearly all 3D-positioned entities — Mesh, Group, Line, Points, Camera, Light, Bone, Skeleton, etc.",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Stable identifier for this node, auto-assigned when the Object3D is constructed."
+    },
+    "type": {
+      "type": "string",
+      "description": "The Object3D subclass type — e.g. 'Mesh', 'Group', 'PerspectiveCamera', 'DirectionalLight', 'Line', 'Points', 'Bone', 'SkinnedMesh', 'Object3D'."
+    },
+    "name": {
+      "type": "string",
+      "description": "Optional human-readable name. Useful for lookups via Object3D.getObjectByName()."
+    },
+    "matrix": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": { "type": "number" },
+      "description": "Local transformation matrix in column-major order (16 numbers)."
+    },
+    "up": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "The up direction used by lookAt(). Defaults to Object3D.DEFAULT_UP which is [0, 1, 0]."
+    },
+    "visible": {
+      "type": "boolean",
+      "description": "Whether the object is rendered. Defaults to true."
+    },
+    "castShadow": {
+      "type": "boolean",
+      "description": "Whether this object casts shadows."
+    },
+    "receiveShadow": {
+      "type": "boolean",
+      "description": "Whether this object receives shadows."
+    },
+    "frustumCulled": {
+      "type": "boolean",
+      "description": "When true (default) the object is culled by the camera frustum before rendering."
+    },
+    "renderOrder": {
+      "type": "number",
+      "description": "Override default rendering order; lower values render first."
+    },
+    "userData": {
+      "type": "object",
+      "description": "Free-form object for caller-defined application data; survives serialization."
+    },
+    "layers": {
+      "type": "integer",
+      "description": "Layers bitmask controlling which cameras can see the object."
+    },
+    "geometry": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID reference into the top-level `geometries` array (Mesh / Line / Points / SkinnedMesh)."
+    },
+    "material": {
+      "oneOf": [
+        { "type": "string", "format": "uuid" },
+        { "type": "array", "items": { "type": "string", "format": "uuid" } }
+      ],
+      "description": "UUID or array of UUIDs referencing materials in the top-level `materials` array."
+    },
+    "children": {
+      "type": "array",
+      "items": { "$ref": "#" },
+      "description": "Child Object3D nodes."
+    }
+  },
+  "required": ["uuid", "type"]
+}

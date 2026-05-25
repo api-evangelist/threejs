@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/threejs/refs/heads/main/json-schema/threejs-scene-schema.json",
+  "title": "Three.js JSON Object Scene",
+  "description": "Top-level serialization format produced by Object3D.toJSON() / Scene.toJSON() and consumed by ObjectLoader.parse(). This is the format the Three.js Editor exports.",
+  "type": "object",
+  "required": ["metadata", "object"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["version", "type", "generator"],
+      "properties": {
+        "version": {
+          "type": "number",
+          "description": "Three.js JSON object format version (e.g. 4.6)."
+        },
+        "type": {
+          "type": "string",
+          "description": "The serialized container type — typically 'Object' for an Object3D / Scene serialization."
+        },
+        "generator": {
+          "type": "string",
+          "description": "Name of the producer — typically 'Object3D.toJSON' or 'Scene.toJSON' or 'Three.js Editor'."
+        }
+      }
+    },
+    "geometries": {
+      "type": "array",
+      "description": "Reusable BufferGeometry definitions referenced by Object3D nodes by UUID.",
+      "items": {
+        "type": "object",
+        "required": ["uuid", "type"],
+        "properties": {
+          "uuid": { "type": "string", "format": "uuid" },
+          "type": { "type": "string", "description": "Geometry class name — e.g. BoxGeometry, SphereGeometry, BufferGeometry." },
+          "data": {
+            "type": "object",
+            "description": "Class-specific parameters or attribute / index data for BufferGeometry."
+          }
+        }
+      }
+    },
+    "materials": {
+      "type": "array",
+      "description": "Reusable material definitions.",
+      "items": {
+        "type": "object",
+        "required": ["uuid", "type"],
+        "properties": {
+          "uuid": { "type": "string", "format": "uuid" },
+          "type": {
+            "type": "string",
+            "description": "Material class name — e.g. MeshStandardMaterial, MeshPhysicalMaterial, MeshBasicMaterial, LineBasicMaterial, ShaderMaterial."
+          },
+          "color": { "type": ["integer", "string"], "description": "Diffuse color, hex integer or '#RRGGBB' string." },
+          "roughness": { "type": "number" },
+          "metalness": { "type": "number" },
+          "opacity": { "type": "number" },
+          "transparent": { "type": "boolean" },
+          "side": { "type": "integer", "description": "0 = FrontSide, 1 = BackSide, 2 = DoubleSide." }
+        }
+      }
+    },
+    "textures": {
+      "type": "array",
+      "description": "Texture definitions referencing entries in `images`.",
+      "items": {
+        "type": "object",
+        "required": ["uuid"],
+        "properties": {
+          "uuid": { "type": "string", "format": "uuid" },
+          "name": { "type": "string" },
+          "image": { "type": "string", "format": "uuid" },
+          "wrap": {
+            "type": "array",
+            "items": { "type": "integer" },
+            "minItems": 2,
+            "maxItems": 2,
+            "description": "[wrapS, wrapT] — 1000 RepeatWrapping, 1001 ClampToEdgeWrapping, 1002 MirroredRepeatWrapping."
+          },
+          "encoding": { "type": "integer", "description": "Color space encoding constant." }
+        }
+      }
+    },
+    "images": {
+      "type": "array",
+      "description": "Image sources — either inline data URLs or external URLs.",
+      "items": {
+        "type": "object",
+        "required": ["uuid", "url"],
+        "properties": {
+          "uuid": { "type": "string", "format": "uuid" },
+          "url": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "array", "items": { "type": "string" }, "description": "Cube texture face URLs." }
+            ]
+          }
+        }
+      }
+    },
+    "object": {
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/threejs/refs/heads/main/json-schema/threejs-object3d-schema.json",
+      "description": "The root Object3D — typically a Scene with children, lights, cameras, and meshes."
+    }
+  }
+}

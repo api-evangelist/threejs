@@ -1,0 +1,282 @@
+aid: threejs
+url: https://raw.githubusercontent.com/api-evangelist/threejs/refs/heads/main/apis.yml
+apis:
+- aid: threejs:threejs-core
+  name: Three.js Core
+  tags:
+  - 3D
+  - Graphics
+  - WebGL
+  - WebGPU
+  - JavaScript
+  - Rendering
+  humanURL: https://threejs.org/docs/
+  properties:
+  - url: https://threejs.org/docs/
+    type: Documentation
+  - url: https://threejs.org/manual/
+    type: Documentation
+  - url: https://github.com/mrdoob/three.js
+    type: GitHubRepository
+  - url: https://www.npmjs.com/package/three
+    type: Package
+  - url: json-schema/threejs-vector3-schema.json
+    type: JSONSchema
+  - url: json-schema/threejs-object3d-schema.json
+    type: JSONSchema
+  - url: json-schema/threejs-scene-schema.json
+    type: JSONSchema
+  - url: json-ld/threejs-context.jsonld
+    type: JSONLD
+  description: The Three.js core library provides the scene graph, cameras, lights, geometries, materials, textures,
+    loaders, and animation primitives used to build interactive 3D applications in the browser and on Node.js. The
+    public surface is a JavaScript API consumed via ES modules and a small CDN-friendly UMD build; classes are
+    organized into Scene, Object3D, Camera, Geometry, Material, Light, and Texture hierarchies and serialize to a
+    documented JSON scene format produced by `Object3D.toJSON()`.
+- aid: threejs:threejs-renderers
+  name: Three.js Renderers (WebGL and WebGPU)
+  tags:
+  - 3D
+  - Graphics
+  - Rendering
+  - WebGL
+  - WebGPU
+  humanURL: https://threejs.org/docs/#api/en/renderers/WebGLRenderer
+  properties:
+  - url: https://threejs.org/docs/#api/en/renderers/WebGLRenderer
+    type: Documentation
+  - url: https://threejs.org/docs/#api/en/renderers/WebGPURenderer
+    type: Documentation
+  - url: https://github.com/mrdoob/three.js/tree/dev/src/renderers
+    type: SourceCode
+  description: WebGLRenderer (default, ships in the main bundle) and the newer WebGPURenderer (under
+    `three/webgpu`) draw the scene graph to a canvas. The Node Material System (TSL — Three.js Shading Language)
+    provides a unified node-based authoring model that compiles to GLSL for WebGL and WGSL for WebGPU, plus
+    addon SVG and CSS3D renderers for non-raster output.
+- aid: threejs:threejs-loaders
+  name: Three.js Loaders
+  tags:
+  - 3D
+  - Loaders
+  - glTF
+  - OBJ
+  - FBX
+  - USDZ
+  - Assets
+  humanURL: https://threejs.org/docs/#api/en/loaders/Loader
+  properties:
+  - url: https://threejs.org/docs/#api/en/loaders/Loader
+    type: Documentation
+  - url: https://github.com/mrdoob/three.js/tree/dev/examples/jsm/loaders
+    type: SourceCode
+  - url: examples/threejs-gltf-scene-example.json
+    type: Example
+  description: A family of asset loaders consumed via `three/addons/loaders/*` covering glTF/GLB (recommended),
+    OBJ, FBX, Collada, STL, PLY, 3MF, USDZ, DRACO, KTX2, Basis, and HDR/EXR environment maps. Loaders read
+    binary or text formats and produce Three.js scene graph objects ready to add to a `THREE.Scene`.
+- aid: threejs:threejs-controls
+  name: Three.js Controls and Helpers
+  tags:
+  - Controls
+  - Input
+  - Camera
+  - Interaction
+  humanURL: https://threejs.org/docs/#examples/en/controls/OrbitControls
+  properties:
+  - url: https://threejs.org/docs/#examples/en/controls/OrbitControls
+    type: Documentation
+  - url: https://github.com/mrdoob/three.js/tree/dev/examples/jsm/controls
+    type: SourceCode
+  description: Camera and object controls shipped as addons (`three/addons/controls/*`) including OrbitControls,
+    MapControls, TrackballControls, FirstPersonControls, FlyControls, PointerLockControls, TransformControls,
+    DragControls, and ArcballControls. Helpers (`three/addons/helpers/*`) visualize lights, cameras, axes, and
+    bounding volumes for debugging.
+- aid: threejs:threejs-postprocessing
+  name: Three.js Post-Processing
+  tags:
+  - Post-Processing
+  - Effects
+  - Rendering
+  - Compositing
+  humanURL: https://threejs.org/docs/#manual/en/introduction/How-to-use-post-processing
+  properties:
+  - url: https://threejs.org/docs/#manual/en/introduction/How-to-use-post-processing
+    type: Documentation
+  - url: https://github.com/mrdoob/three.js/tree/dev/examples/jsm/postprocessing
+    type: SourceCode
+  description: EffectComposer plus a passes library — RenderPass, ShaderPass, UnrealBloomPass, BloomPass,
+    SSAOPass, SSRPass, SAOPass, OutlinePass, SMAAPass, FXAAPass, TAARenderPass, BokehPass, GlitchPass — for
+    chaining screen-space effects, with WebGPU equivalents under `three/addons/postprocessing` for the new
+    renderer.
+- aid: threejs:threejs-editor
+  name: Three.js Editor
+  tags:
+  - Editor
+  - Authoring
+  - Tools
+  humanURL: https://threejs.org/editor/
+  properties:
+  - url: https://threejs.org/editor/
+    type: Sandbox
+  - url: https://github.com/mrdoob/three.js/tree/dev/editor
+    type: SourceCode
+  description: Browser-based scene editor for assembling Three.js scenes, importing assets, editing materials and
+    lights, and exporting to the documented Three.js JSON object format. Useful as a no-code starting point that
+    produces files consumable by `ObjectLoader` in any Three.js application.
+name: Three.js
+tags:
+- 3D
+- Graphics
+- WebGL
+- WebGPU
+- JavaScript
+- Rendering
+- Open Source
+- Game Development
+- Visualization
+kind: opensource
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: Open Source
+common:
+- url: https://threejs.org
+  type: Portal
+- url: https://threejs.org/docs/
+  type: Documentation
+- url: https://threejs.org/manual/
+  name: Three.js Manual
+  type: Documentation
+- url: https://threejs.org/examples/
+  name: Three.js Examples
+  type: CodeExamples
+- url: https://threejs.org/editor/
+  name: Three.js Editor
+  type: Sandbox
+- url: https://github.com/mrdoob/three.js
+  type: GitHubRepository
+- url: https://github.com/mrdoob
+  type: GitHubOrganization
+- url: https://github.com/mrdoob/three.js/releases
+  name: Three.js Releases
+  type: ChangeLog
+- url: https://github.com/mrdoob/three.js/blob/dev/LICENSE
+  name: MIT License
+  type: License
+- url: https://github.com/mrdoob/three.js/blob/dev/CONTRIBUTING.md
+  type: Documentation
+- url: https://github.com/mrdoob/three.js/blob/dev/CODE_OF_CONDUCT.md
+  type: CodeOfConduct
+- url: https://github.com/mrdoob/three.js/wiki
+  type: Documentation
+- url: https://github.com/mrdoob/three.js/wiki/Migration-Guide
+  name: Three.js Migration Guide
+  type: Documentation
+- url: https://github.com/mrdoob/three.js/issues
+  type: Issues
+- url: https://github.com/mrdoob/three.js/pulls
+  type: PullRequests
+- url: https://github.com/mrdoob/three.js/discussions
+  type: Forum
+- url: https://discourse.threejs.org/
+  name: Three.js Discourse Forum
+  type: Forum
+- url: https://discord.gg/56GBJwAnUS
+  name: Three.js Discord
+  type: Forum
+- url: https://stackoverflow.com/questions/tagged/three.js
+  name: Stack Overflow — three.js
+  type: Support
+- url: https://www.npmjs.com/package/three
+  name: three (npm)
+  type: Package
+- url: https://www.npmjs.com/package/@types/three
+  name: '@types/three (DefinitelyTyped)'
+  type: Package
+- url: https://github.com/three-types/three-ts-types
+  name: Three.js TypeScript Types
+  type: SDK
+- url: https://cdn.jsdelivr.net/npm/three/
+  name: jsDelivr CDN
+  type: CDN
+- url: https://unpkg.com/three/
+  name: unpkg CDN
+  type: CDN
+- url: https://github.com/pmndrs/react-three-fiber
+  name: React Three Fiber
+  type: Integration
+- url: https://github.com/pmndrs/drei
+  name: drei (R3F helpers)
+  type: Integration
+- url: https://github.com/aframevr/aframe
+  name: A-Frame (built on three.js)
+  type: Integration
+- url: https://github.com/Tencent/tweenjs
+  name: Tween.js
+  type: Integration
+- url: https://github.com/google/model-viewer
+  name: '<model-viewer> (uses three.js)'
+  type: Integration
+- url: https://github.com/threlte/threlte
+  name: Threlte (Svelte renderer)
+  type: Integration
+- url: https://github.com/troisjs/trois
+  name: TroisJS (Vue renderer)
+  type: Integration
+- url: https://github.com/mrdoob/stats.js
+  name: stats.js
+  type: Tool
+- url: https://github.com/threejs/three-devtools
+  name: Three.js DevTools
+  type: Tool
+- url: https://x.com/threejs
+  type: X
+- url: https://github.com/mrdoob/three.js/blob/dev/README.md
+  type: Documentation
+- type: Features
+  data:
+  - WebGLRenderer — production WebGL 2 renderer with PBR materials, shadows, instancing, and morph targets
+  - WebGPURenderer — next-generation WebGPU backend with the Node Material System (TSL) authoring model
+  - TSL — Three.js Shading Language, a node-based shader graph that compiles to both GLSL and WGSL
+  - Scene graph based on Object3D with Groups, LOD, Bones, Skinned meshes, InstancedMesh, and BatchedMesh
+  - Cameras — PerspectiveCamera, OrthographicCamera, ArrayCamera, StereoCamera, CubeCamera
+  - Lights — Ambient, Directional, Point, Spot, Hemisphere, Rect Area, plus shadow maps and light probes
+  - Materials — MeshStandard, MeshPhysical (clearcoat, sheen, iridescence, transmission), MeshBasic, MeshLambert, MeshPhong, MeshToon, Shader, Raw, Sprite, Line, Points
+  - Geometry primitives — Box, Sphere, Plane, Cylinder, Cone, Torus, TorusKnot, Tetra/Octa/Icosa/Dodecahedron, Capsule, Lathe, Extrude, Tube
+  - Loaders — glTF/GLB (with KHR_draco_mesh_compression, KHR_mesh_quantization, KHR_texture_basisu, EXT_meshopt_compression), OBJ, FBX, Collada, STL, PLY, 3MF, USDZ
+  - Texture pipeline — KTX2/Basis Universal, HDR/EXR/RGBE, video textures, canvas textures, compressed textures
+  - Animation system — AnimationMixer, AnimationClip, KeyframeTrack, morph target and skeletal animation
+  - Controls addons — OrbitControls, MapControls, TrackballControls, PointerLockControls, TransformControls, ArcballControls, DragControls
+  - Post-processing — EffectComposer with RenderPass, Bloom, SSAO, SSR, SMAA, FXAA, TAA, DOF, Outline, Glitch
+  - XR — WebXR support for VR and AR via `renderer.xr` and XR controllers/hands
+  - Physics integrations — Cannon.js, Ammo.js, Rapier (community)
+  - Browser-based Editor at threejs.org/editor for visual scene authoring and JSON export/import
+  - Three.js JSON Object format — documented serialization via `Object3D.toJSON()` and `ObjectLoader.parse()`
+  - Distributed as `three` on npm, ES modules in `three/build/three.module.js`, addons in `three/addons/*`
+  - TypeScript types via `@types/three` on DefinitelyTyped, mirrored in three-types/three-ts-types
+  - Monthly release cadence — current release r184 (April 2026), 47k+ commits, 113k+ GitHub stars
+  - MIT licensed, no required runtime dependencies, runs in browser, Node.js, Electron, Tauri, Deno, and React Native
+  sources:
+  - https://threejs.org/
+  - https://github.com/mrdoob/three.js
+  - https://github.com/mrdoob/three.js/blob/dev/README.md
+  - https://registry.npmjs.org/three/latest
+  updated: '2026-05-25'
+created: '2026-05-25T00:00:00.000Z'
+modified: '2026-05-25'
+position: Producing
+description: Three.js is an open-source JavaScript 3D library originally created by Ricardo Cabello (mrdoob) in
+  2010 and now maintained by a broad community of contributors. It abstracts WebGL and WebGPU behind a clean
+  object-oriented API — Scenes, Cameras, Lights, Geometries, Materials, Textures, Loaders, Controls, Animation,
+  and Post-Processing — to make interactive 3D in the browser practical for games, product configurators, data
+  visualization, generative art, GIS, scientific visualization, simulations, AR/VR (WebXR), and creative
+  coding. The library ships as the `three` npm package under MIT license with a rich addon ecosystem
+  (`three/addons/*`) including dozens of loaders for industry asset formats (glTF, OBJ, FBX, USDZ, KTX2,
+  DRACO), controls, helpers, post-processing passes, and a node-based shading language (TSL) that targets both
+  WebGL and WebGPU. A browser-based editor at threejs.org/editor produces scenes in a documented JSON object
+  format. Three.js has become the de-facto foundation for the JavaScript 3D ecosystem and underpins higher-level
+  projects including React Three Fiber, A-Frame, model-viewer, Threlte, and TroisJS.
+maintainers:
+- FN: Kin Lane
+  email: info@apievangelist.com
+  X: apievangelist
+  url: https://apievangelist.com
+specificationVersion: '0.16'
