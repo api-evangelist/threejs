@@ -70,7 +70,7 @@ apis:
   - url: https://github.com/mrdoob/three.js/tree/dev/examples/jsm/loaders
     type: SourceCode
   - url: examples/threejs-gltf-scene-example.json
-    type: Example
+    type: Examples
   description: A family of asset loaders consumed via `three/addons/loaders/*` covering glTF/GLB (recommended),
     OBJ, FBX, Collada, STL, PLY, 3MF, USDZ, DRACO, KTX2, Basis, and HDR/EXR environment maps. Loaders read
     binary or text formats and produce Three.js scene graph objects ready to add to a `THREE.Scene`.
@@ -175,13 +175,13 @@ common:
 - url: https://github.com/mrdoob/three.js/pulls
   type: PullRequests
 - url: https://github.com/mrdoob/three.js/discussions
-  type: Forum
+  type: Forums
 - url: https://discourse.threejs.org/
   name: Three.js Discourse Forum
-  type: Forum
+  type: Forums
 - url: https://discord.gg/56GBJwAnUS
   name: Three.js Discord
-  type: Forum
+  type: Forums
 - url: https://stackoverflow.com/questions/tagged/three.js
   name: Stack Overflow — three.js
   type: Support
@@ -193,7 +193,7 @@ common:
   type: Package
 - url: https://github.com/three-types/three-ts-types
   name: Three.js TypeScript Types
-  type: SDK
+  type: SDKs
 - url: https://cdn.jsdelivr.net/npm/three/
   name: jsDelivr CDN
   type: CDN
@@ -202,31 +202,31 @@ common:
   type: CDN
 - url: https://github.com/pmndrs/react-three-fiber
   name: React Three Fiber
-  type: Integration
+  type: Integrations
 - url: https://github.com/pmndrs/drei
   name: drei (R3F helpers)
-  type: Integration
+  type: Integrations
 - url: https://github.com/aframevr/aframe
   name: A-Frame (built on three.js)
-  type: Integration
+  type: Integrations
 - url: https://github.com/Tencent/tweenjs
   name: Tween.js
-  type: Integration
+  type: Integrations
 - url: https://github.com/google/model-viewer
   name: '<model-viewer> (uses three.js)'
-  type: Integration
+  type: Integrations
 - url: https://github.com/threlte/threlte
   name: Threlte (Svelte renderer)
-  type: Integration
+  type: Integrations
 - url: https://github.com/troisjs/trois
   name: TroisJS (Vue renderer)
-  type: Integration
+  type: Integrations
 - url: https://github.com/mrdoob/stats.js
   name: stats.js
-  type: Tool
+  type: Tools
 - url: https://github.com/threejs/three-devtools
   name: Three.js DevTools
-  type: Tool
+  type: Tools
 - url: https://x.com/threejs
   type: X
 - url: https://github.com/mrdoob/three.js/blob/dev/README.md
