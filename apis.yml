@@ -145,6 +145,18 @@ tags_raw:
 - Game Development
 - Visualization
 kind: opensource
+deliveryModel:
+  model: library
+  license: MIT License
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Library · distributed through package registries, no callable service
+  confidence: low
+  source:
+  - license
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
