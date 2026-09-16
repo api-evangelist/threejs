@@ -28,11 +28,11 @@ apis:
     type: JSONSchema
   - url: json-ld/threejs-context.jsonld
     type: JSONLD
-  description: The Three.js core library provides the scene graph, cameras, lights, geometries, materials, textures,
-    loaders, and animation primitives used to build interactive 3D applications in the browser and on Node.js. The
-    public surface is a JavaScript API consumed via ES modules and a small CDN-friendly UMD build; classes are
-    organized into Scene, Object3D, Camera, Geometry, Material, Light, and Texture hierarchies and serialize to a
-    documented JSON scene format produced by `Object3D.toJSON()`.
+  description: The Three.js core library provides the scene graph, cameras, lights, geometries, materials,
+    textures, loaders, and animation primitives used to build interactive 3D applications in the browser
+    and on Node.js. The public surface is a JavaScript API consumed via ES modules and a small CDN-friendly
+    UMD build; classes are organized into Scene, Object3D, Camera, Geometry, Material, Light, and Texture
+    hierarchies and serialize to a documented JSON scene format produced by `Object3D.toJSON()`.
 - aid: threejs:threejs-renderers
   name: Three.js Renderers (WebGL and WebGPU)
   tags:
@@ -49,10 +49,10 @@ apis:
     type: Documentation
   - url: https://github.com/mrdoob/three.js/tree/dev/src/renderers
     type: SourceCode
-  description: WebGLRenderer (default, ships in the main bundle) and the newer WebGPURenderer (under
-    `three/webgpu`) draw the scene graph to a canvas. The Node Material System (TSL — Three.js Shading Language)
-    provides a unified node-based authoring model that compiles to GLSL for WebGL and WGSL for WebGPU, plus
-    addon SVG and CSS3D renderers for non-raster output.
+  description: WebGLRenderer (default, ships in the main bundle) and the newer WebGPURenderer (under `three/webgpu`)
+    draw the scene graph to a canvas. The Node Material System (TSL — Three.js Shading Language) provides
+    a unified node-based authoring model that compiles to GLSL for WebGL and WGSL for WebGPU, plus addon
+    SVG and CSS3D renderers for non-raster output.
 - aid: threejs:threejs-loaders
   name: Three.js Loaders
   tags:
@@ -72,8 +72,8 @@ apis:
   - url: examples/threejs-gltf-scene-example.json
     type: Examples
   description: A family of asset loaders consumed via `three/addons/loaders/*` covering glTF/GLB (recommended),
-    OBJ, FBX, Collada, STL, PLY, 3MF, USDZ, DRACO, KTX2, Basis, and HDR/EXR environment maps. Loaders read
-    binary or text formats and produce Three.js scene graph objects ready to add to a `THREE.Scene`.
+    OBJ, FBX, Collada, STL, PLY, 3MF, USDZ, DRACO, KTX2, Basis, and HDR/EXR environment maps. Loaders
+    read binary or text formats and produce Three.js scene graph objects ready to add to a `THREE.Scene`.
 - aid: threejs:threejs-controls
   name: Three.js Controls and Helpers
   tags:
@@ -89,8 +89,8 @@ apis:
     type: SourceCode
   description: Camera and object controls shipped as addons (`three/addons/controls/*`) including OrbitControls,
     MapControls, TrackballControls, FirstPersonControls, FlyControls, PointerLockControls, TransformControls,
-    DragControls, and ArcballControls. Helpers (`three/addons/helpers/*`) visualize lights, cameras, axes, and
-    bounding volumes for debugging.
+    DragControls, and ArcballControls. Helpers (`three/addons/helpers/*`) visualize lights, cameras, axes,
+    and bounding volumes for debugging.
 - aid: threejs:threejs-postprocessing
   name: Three.js Post-Processing
   tags:
@@ -105,9 +105,9 @@ apis:
   - url: https://github.com/mrdoob/three.js/tree/dev/examples/jsm/postprocessing
     type: SourceCode
   description: EffectComposer plus a passes library — RenderPass, ShaderPass, UnrealBloomPass, BloomPass,
-    SSAOPass, SSRPass, SAOPass, OutlinePass, SMAAPass, FXAAPass, TAARenderPass, BokehPass, GlitchPass — for
-    chaining screen-space effects, with WebGPU equivalents under `three/addons/postprocessing` for the new
-    renderer.
+    SSAOPass, SSRPass, SAOPass, OutlinePass, SMAAPass, FXAAPass, TAARenderPass, BokehPass, GlitchPass
+    — for chaining screen-space effects, with WebGPU equivalents under `three/addons/postprocessing` for
+    the new renderer.
 - aid: threejs:threejs-editor
   name: Three.js Editor
   tags:
@@ -120,9 +120,9 @@ apis:
     type: Sandbox
   - url: https://github.com/mrdoob/three.js/tree/dev/editor
     type: SourceCode
-  description: Browser-based scene editor for assembling Three.js scenes, importing assets, editing materials and
-    lights, and exporting to the documented Three.js JSON object format. Useful as a no-code starting point that
-    produces files consumable by `ObjectLoader` in any Three.js application.
+  description: Browser-based scene editor for assembling Three.js scenes, importing assets, editing materials
+    and lights, and exporting to the documented Three.js JSON object format. Useful as a no-code starting
+    point that produces files consumable by `ObjectLoader` in any Three.js application.
 name: Three.js
 tags:
 - 3D
@@ -171,6 +171,8 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/threejs.png
 access: Open Source
 common:
+- type: Website
+  url: https://threejs.org
 - type: DomainSecurity
   url: security/threejs-domain-security.yml
 - url: https://threejs.org
@@ -248,7 +250,7 @@ common:
   name: Tween.js
   type: Integrations
 - url: https://github.com/google/model-viewer
-  name: '<model-viewer> (uses three.js)'
+  name: <model-viewer> (uses three.js)
   type: Integrations
 - url: https://github.com/threlte/threlte
   name: Threlte (Svelte renderer)
@@ -274,13 +276,19 @@ common:
   - Scene graph based on Object3D with Groups, LOD, Bones, Skinned meshes, InstancedMesh, and BatchedMesh
   - Cameras — PerspectiveCamera, OrthographicCamera, ArrayCamera, StereoCamera, CubeCamera
   - Lights — Ambient, Directional, Point, Spot, Hemisphere, Rect Area, plus shadow maps and light probes
-  - Materials — MeshStandard, MeshPhysical (clearcoat, sheen, iridescence, transmission), MeshBasic, MeshLambert, MeshPhong, MeshToon, Shader, Raw, Sprite, Line, Points
-  - Geometry primitives — Box, Sphere, Plane, Cylinder, Cone, Torus, TorusKnot, Tetra/Octa/Icosa/Dodecahedron, Capsule, Lathe, Extrude, Tube
-  - Loaders — glTF/GLB (with KHR_draco_mesh_compression, KHR_mesh_quantization, KHR_texture_basisu, EXT_meshopt_compression), OBJ, FBX, Collada, STL, PLY, 3MF, USDZ
-  - Texture pipeline — KTX2/Basis Universal, HDR/EXR/RGBE, video textures, canvas textures, compressed textures
+  - Materials — MeshStandard, MeshPhysical (clearcoat, sheen, iridescence, transmission), MeshBasic, MeshLambert,
+    MeshPhong, MeshToon, Shader, Raw, Sprite, Line, Points
+  - Geometry primitives — Box, Sphere, Plane, Cylinder, Cone, Torus, TorusKnot, Tetra/Octa/Icosa/Dodecahedron,
+    Capsule, Lathe, Extrude, Tube
+  - Loaders — glTF/GLB (with KHR_draco_mesh_compression, KHR_mesh_quantization, KHR_texture_basisu, EXT_meshopt_compression),
+    OBJ, FBX, Collada, STL, PLY, 3MF, USDZ
+  - Texture pipeline — KTX2/Basis Universal, HDR/EXR/RGBE, video textures, canvas textures, compressed
+    textures
   - Animation system — AnimationMixer, AnimationClip, KeyframeTrack, morph target and skeletal animation
-  - Controls addons — OrbitControls, MapControls, TrackballControls, PointerLockControls, TransformControls, ArcballControls, DragControls
-  - Post-processing — EffectComposer with RenderPass, Bloom, SSAO, SSR, SMAA, FXAA, TAA, DOF, Outline, Glitch
+  - Controls addons — OrbitControls, MapControls, TrackballControls, PointerLockControls, TransformControls,
+    ArcballControls, DragControls
+  - Post-processing — EffectComposer with RenderPass, Bloom, SSAO, SSR, SMAA, FXAA, TAA, DOF, Outline,
+    Glitch
   - XR — WebXR support for VR and AR via `renderer.xr` and XR controllers/hands
   - Physics integrations — Cannon.js, Ammo.js, Rapier (community)
   - Browser-based Editor at threejs.org/editor for visual scene authoring and JSON export/import
@@ -288,7 +296,8 @@ common:
   - Distributed as `three` on npm, ES modules in `three/build/three.module.js`, addons in `three/addons/*`
   - TypeScript types via `@types/three` on DefinitelyTyped, mirrored in three-types/three-ts-types
   - Monthly release cadence — current release r184 (April 2026), 47k+ commits, 113k+ GitHub stars
-  - MIT licensed, no required runtime dependencies, runs in browser, Node.js, Electron, Tauri, Deno, and React Native
+  - MIT licensed, no required runtime dependencies, runs in browser, Node.js, Electron, Tauri, Deno, and
+    React Native
   sources:
   - https://threejs.org/
   - https://github.com/mrdoob/three.js
@@ -296,19 +305,20 @@ common:
   - https://registry.npmjs.org/three/latest
   updated: '2026-05-25'
 created: '2026-05-25T00:00:00.000Z'
-modified: '2026-05-25'
+modified: '2026-09-16'
 position: Producing
-description: Three.js is an open-source JavaScript 3D library originally created by Ricardo Cabello (mrdoob) in
-  2010 and now maintained by a broad community of contributors. It abstracts WebGL and WebGPU behind a clean
-  object-oriented API — Scenes, Cameras, Lights, Geometries, Materials, Textures, Loaders, Controls, Animation,
-  and Post-Processing — to make interactive 3D in the browser practical for games, product configurators, data
-  visualization, generative art, GIS, scientific visualization, simulations, AR/VR (WebXR), and creative
-  coding. The library ships as the `three` npm package under MIT license with a rich addon ecosystem
-  (`three/addons/*`) including dozens of loaders for industry asset formats (glTF, OBJ, FBX, USDZ, KTX2,
-  DRACO), controls, helpers, post-processing passes, and a node-based shading language (TSL) that targets both
-  WebGL and WebGPU. A browser-based editor at threejs.org/editor produces scenes in a documented JSON object
-  format. Three.js has become the de-facto foundation for the JavaScript 3D ecosystem and underpins higher-level
-  projects including React Three Fiber, A-Frame, model-viewer, Threlte, and TroisJS.
+description: Three.js is an open-source JavaScript 3D library originally created by Ricardo Cabello (mrdoob)
+  in 2010 and now maintained by a broad community of contributors. It abstracts WebGL and WebGPU behind
+  a clean object-oriented API — Scenes, Cameras, Lights, Geometries, Materials, Textures, Loaders, Controls,
+  Animation, and Post-Processing — to make interactive 3D in the browser practical for games, product
+  configurators, data visualization, generative art, GIS, scientific visualization, simulations, AR/VR
+  (WebXR), and creative coding. The library ships as the `three` npm package under MIT license with a
+  rich addon ecosystem (`three/addons/*`) including dozens of loaders for industry asset formats (glTF,
+  OBJ, FBX, USDZ, KTX2, DRACO), controls, helpers, post-processing passes, and a node-based shading language
+  (TSL) that targets both WebGL and WebGPU. A browser-based editor at threejs.org/editor produces scenes
+  in a documented JSON object format. Three.js has become the de-facto foundation for the JavaScript 3D
+  ecosystem and underpins higher-level projects including React Three Fiber, A-Frame, model-viewer, Threlte,
+  and TroisJS.
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
