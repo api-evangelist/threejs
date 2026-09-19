@@ -77,6 +77,11 @@ apis:
 - aid: threejs:threejs-controls
   name: Three.js Controls and Helpers
   tags:
+  - Control
+  - Input
+  - Camera
+  - Interaction
+  tags_raw:
   - Controls
   - Input
   - Camera
