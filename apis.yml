@@ -136,7 +136,7 @@ tags:
 - WebGPU
 - JavaScript
 - Rendering
-- Open-Source
+- Open Source
 - Game Development
 - Visualization
 tags_raw:
@@ -149,6 +149,7 @@ tags_raw:
 - Open Source
 - Game Development
 - Visualization
+- Open-Source
 kind: opensource
 deliveryModel:
   model: library
